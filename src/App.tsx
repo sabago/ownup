@@ -21,7 +21,12 @@ const App: React.FC<IProps> = (props:IProps, state:IState) => {
     const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
     const API_URL= `https://ss6b2ke2ca.execute-api.us-east-1.amazonaws.com/Prod/quotes/?apiKey=${API_KEY}`;
     const fetch_url = new URL(API_URL);
-    fetch_url.search = new URLSearchParams({"loanSize":`${loanSize}`, "creditScore":`${creditScore}`, "propertyType": `${propertyType}`, "occupancy":`${occupancy}`}).toString();
+    fetch_url.search = new URLSearchParams(
+                        {"loanSize":`${loanSize}`,
+                        "creditScore":`${creditScore}`,
+                        "propertyType": `${propertyType}`,
+                        "occupancy":`${occupancy}`}
+                        ).toString();
 
     const fetchData = async () => {
     try {
