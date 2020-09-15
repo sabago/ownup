@@ -21,3 +21,6 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+#adding env file to protect API-KEY from publishing in github
+.env
