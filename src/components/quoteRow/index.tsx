@@ -1,8 +1,10 @@
 import * as React from 'react';
 
+// import "./styles.css";
 interface IProps {
     quoteprop: any;
 }
+
 export const QuoteRow: React.FC <IProps>=(props: IProps)=>{
     const quote  = props.quoteprop;
     return (

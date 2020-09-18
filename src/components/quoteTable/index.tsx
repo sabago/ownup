@@ -1,10 +1,12 @@
 import * as React from 'react';
+
 import { QuoteRow } from '../quoteRow';
 
 interface IProps {
     quotes:any;
 }
-export const TableHeader:React.FC <IProps>=(props: IProps) => {
+
+export const QuoteTable:React.FC <IProps>=(props: IProps) => {
     const rows: any=[];
     let lastLender: any = null;
 
@@ -17,6 +19,7 @@ export const TableHeader:React.FC <IProps>=(props: IProps) => {
         }
         lastLender = quote.lenderName;
     });
+    
     return (
         <table>
             <thead>
