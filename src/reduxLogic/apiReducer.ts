@@ -9,7 +9,7 @@ const initialState = {
     monthlyPayment: "",
     apr: ""
    },
-   loading: false,
+   loading: true,
    error: ''
 };
 
@@ -32,7 +32,7 @@ export default function reduxThunkReducer(state = initialState, action: any) {
        case LOAD_QUOTES_ERROR: {
            return {
                ...state,
-               loading: false,
+               loading: true,
                error: action.error
            };
        }
@@ -45,4 +45,8 @@ export default function reduxThunkReducer(state = initialState, action: any) {
 //Selector
 export function getQuotes(state: any) {
     return state.quotes;
+}
+
+export function getLoading(state: any) {
+    return state.loading;
 }

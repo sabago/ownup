@@ -1,0 +1,12 @@
+.trunc-text {
+    max-width: 125px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+tr {
+ padding: 10px;
+ border: 1px solid lightgrey;
+ border-collapse: collapse;
+}

@@ -1,0 +1,32 @@
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    color: #3d4849;
+}
+
+th,
+td {
+  border-bottom: 1px solid lightgrey;
+  padding: 10px 15px;
+}
+
+th {
+  font-weight: bold;
+  color: lightgrey;
+}
+
+tfoot tr:last-child td {
+  border-bottom: 0;
+}
+
+.center-loader {
+  display: block;
+  flex-wrap: nowrap;
+  margin-right: 40%;
+  color: #3d4849;
+}
+
+.trunc-head-text {
+  max-width: 100px;
+}
