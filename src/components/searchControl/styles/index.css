@@ -1,0 +1,26 @@
+.search {
+    display: flex;
+    justify-content: space-between;
+}
+
+form {
+    width: 70%;
+    padding-top: 50px;
+    padding-bottom: 65px;
+    margin-right: 300px;
+}
+
+span {
+    padding-right: 10px;
+}
+
+.quote-button {
+    margin-top: 20px;
+    margin-right: 10px;
+    border-color: #265b5f;
+    background-color: #265b5f;
+    color: #fff;
+    padding: 10px 10px;
+    border-radius: 4px;
+    float: right;
+}

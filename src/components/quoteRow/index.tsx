@@ -1,20 +1,47 @@
 import * as React from 'react';
 
-// import "./styles.css";
+import "./styles/index.css";
+
 interface IProps {
     quoteprop: any;
 }
 
-export const QuoteRow: React.FC <IProps>=(props: IProps)=>{
+export const QuoteRow: React.FC <IProps> = (props: IProps) => {
     const quote  = props.quoteprop;
     return (
         <tr>
-            <td>{quote.lenderName}</td>
+            <td>
+                <div className="trunc-text">{quote.lenderName}</div>
+            </td>
             <td>{quote.loanType}</td>
-            <td>{quote.interestRate}</td>
-            <td>{quote.closingCosts}</td>
-            <td>{quote.monthlyPayment}</td>
-            <td>{quote.apr}</td>
+            <td>
+                {new Intl.NumberFormat('en-US', {
+                    minimumFractionDigits: 3,
+                    maximumFractionDigits: 3
+                    }).format(quote.interestRate)+"%"}
+            </td>
+            <td>
+                {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                }).format(quote.closingCosts)}
+            </td>
+            <td>
+                {new Intl.NumberFormat("en-US", {
+                    style: "currency",
+                    currency: "USD",
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                }).format(quote.monthlyPayment)}
+            </td>
+            <td>
+                {new Intl.NumberFormat('en-US', {
+                minimumFractionDigits: 3,
+                maximumFractionDigits: 3
+                }).format(quote.apr)+"%"}
+            </td>
         </tr>
     );
 }
