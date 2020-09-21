@@ -5,7 +5,26 @@ import "./styles/index.css";
 interface IProps {
     quoteprop: any;
 }
+ 
+ const toPercentage = (num: any) => {
+    const formatter = new Intl.NumberFormat("en-US", {
+        minimumFractionDigits: 3,
+        maximumFractionDigits: 3
+    });
+    return formatter.format(num);
+ }
 
+ const toCurrency = (num: any) => {
+    const formatter = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 0,
+      maximumFractionDigits: 0
+    });
+    return formatter.format(num);
+  }
+
+  //Because this is rendered dynamically when the data is fetched, skipping test for now
 export const QuoteRow: React.FC <IProps> = (props: IProps) => {
     const quote  = props.quoteprop;
     return (
@@ -15,32 +34,16 @@ export const QuoteRow: React.FC <IProps> = (props: IProps) => {
             </td>
             <td>{quote.loanType}</td>
             <td>
-                {new Intl.NumberFormat('en-US', {
-                    minimumFractionDigits: 3,
-                    maximumFractionDigits: 3
-                    }).format(quote.interestRate)+"%"}
+                {toPercentage(quote.interestRate)+"%"}
             </td>
             <td>
-                {new Intl.NumberFormat("en-US", {
-                    style: "currency",
-                    currency: "USD",
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 0
-                }).format(quote.closingCosts)}
+                {toCurrency(quote.closingCosts)}
             </td>
             <td>
-                {new Intl.NumberFormat("en-US", {
-                    style: "currency",
-                    currency: "USD",
-                    minimumFractionDigits: 0,
-                    maximumFractionDigits: 0
-                }).format(quote.monthlyPayment)}
+                {toCurrency(quote.monthlyPayment)}
             </td>
             <td>
-                {new Intl.NumberFormat('en-US', {
-                minimumFractionDigits: 3,
-                maximumFractionDigits: 3
-                }).format(quote.apr)+"%"}
+                {toPercentage(quote.apr)+"%"}
             </td>
         </tr>
     );

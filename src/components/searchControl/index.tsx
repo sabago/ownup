@@ -38,14 +38,16 @@ export const SearchControl = () => {
                 e.preventDefault();
             }
     }, [loanSize, creditScore, propertyType, occupancy]);
-          
+
     return (
-        <div>
+        <div data-testid="search-control" >
             <form>
                 <div className="search">
                     <span>
-                        <label>Loan Size</label>
+                        <label id="loan-size">Loan Size</label>
                         <input
+                            aria-labelledby="loan-size"
+                            data-testid="loan-size"
                             type="number"
                             placeholder="450000"
                             onChange={e=>setLoanSize(parseInt(e.target.value))}
@@ -53,8 +55,10 @@ export const SearchControl = () => {
                         />
                     </span>
                     <span>
-                        <label>Property Type</label>
+                        <label id="property-type">Property Type</label>
                         <select
+                            aria-labelledby="property-type"
+                            id="property-type"
                             onChange={e=>setPropertyType(e.target.value)}
                             value={propertyType}
                         >
@@ -69,8 +73,10 @@ export const SearchControl = () => {
                 <br/>
                 <div className="search">
                     <span>
-                        <label> Credit Score</label>
+                        <label id="credit-score"> Credit Score</label>
                         <input
+                            aria-labelledby="credit-score"
+                            data-testid="credit-score"
                             type="number"
                             placeholder="680"
                             onChange={e=>setCreditScore(parseInt(e.target.value))}
@@ -78,8 +84,9 @@ export const SearchControl = () => {
                         />
                     </span>
                     <span>
-                        <label>Occupancy</label>
+                        <label id="occupancy">Occupancy</label>
                         <select
+                            aria-labelledby="occupancy"
                             value={occupancy}
                             onChange={e=>setOccupancy(e.target.value)}
                         >

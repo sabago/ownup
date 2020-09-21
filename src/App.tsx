@@ -6,7 +6,6 @@ import { getQuotes } from './reduxLogic/apiReducer';
 import { SearchControl } from './components/searchControl';
 import './App.css';
 
-
 const App = () => {
   const fetchedQuotes = useSelector(getQuotes);
   const quotes = Object.values(fetchedQuotes);

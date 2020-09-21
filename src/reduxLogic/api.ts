@@ -1,6 +1,5 @@
-
-const API_KEY = process.env.REACT_APP_API_KEY;
-const API_URL= `https://ss6b2ke2ca.execute-api.us-east-1.amazonaws.com/Prod/quotes/`;
+export const API_KEY = process.env.REACT_APP_API_KEY;
+export const API_URL= `https://ss6b2ke2ca.execute-api.us-east-1.amazonaws.com/Prod/quotes/`;
 
 class API {
     static fetchQuotes(loanSize: any, creditScore: any, propertyType: any, occupancy: any) {
@@ -11,9 +10,9 @@ class API {
                         "propertyType": propertyType,
                         "occupancy": occupancy}
                         ).toString();
-        
                 return fetch(fetch_url.href, {
                     headers: {
+                        'content-type': 'application/json' ,
                         'Authorization': `OU-AUTH ${API_KEY}`
                         }
                 });

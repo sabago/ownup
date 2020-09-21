@@ -23,7 +23,7 @@ tfoot tr:last-child td {
 .center-loader {
   display: block;
   flex-wrap: nowrap;
-  margin-right: 40%;
+  margin-right: 50%;
   color: #3d4849;
 }
 

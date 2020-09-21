@@ -1,6 +1,17 @@
 import {LOAD_QUOTES_ERROR, LOAD_QUOTES_LOADING, LOAD_QUOTES_SUCCESS} from "./apiActions";
 
-const initialState = {
+export interface IState {
+    quotes: {
+        lenderName: string,
+        loanType: number,
+        interestRate: number,
+        closingCosts: number,
+        monthlyPayment: number,
+        apr: number
+    }
+};
+
+export const initialState = {
    quotes: {
     lenderName: "",
     loanType: "",
@@ -27,13 +38,13 @@ export default function reduxThunkReducer(state = initialState, action: any) {
                ...state,
                quotes: action.payload,
                loading: false
-           }
+           };
        }
        case LOAD_QUOTES_ERROR: {
            return {
                ...state,
                loading: true,
-               error: action.error
+               error: "failed to fetch data"
            };
        }
        default: {
@@ -42,7 +53,7 @@ export default function reduxThunkReducer(state = initialState, action: any) {
    }
 }
 
-//Selector
+//Selectors
 export function getQuotes(state: any) {
     return state.quotes;
 }
