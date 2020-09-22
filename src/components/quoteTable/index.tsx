@@ -23,7 +23,7 @@ export const QuoteTable:React.FC <IProps>=(props: IProps) => {
             );
             return rows;
         }
-        lastLender = quote.lenderName;
+        return lastLender = quote.lenderName;
     });
 
     return (

@@ -1,5 +1,5 @@
 import * as React from "react";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 import { useDispatch } from "react-redux";
 
@@ -26,18 +26,25 @@ export const SearchControl = () => {
         {value: "Secondary" , label:"Secondary Residence"},
         {value: "Investment", label: "Investment"}
     ];
-      
-    let updateParams: any;
-    useEffect(()=>{
-        updateParams = (e: any) =>{
-            dispatch(loadQuotes(
-                loanSize,
-                creditScore,
-                propertyType,
-                occupancy));
-                e.preventDefault();
-            }
-    }, [loanSize, creditScore, propertyType, occupancy, updateParams]);
+    
+    const updateParams = (e: any) =>{
+        dispatch(loadQuotes(
+            loanSize,
+            creditScore,
+            propertyType,
+            occupancy));
+            e.preventDefault();
+    }
+    // useEffect(()=>{
+    //     updateParams = (e: any) =>{
+    //         dispatch(loadQuotes(
+    //             loanSize,
+    //             creditScore,
+    //             propertyType,
+    //             occupancy));
+    //             e.preventDefault();
+    //         }
+    // }, [loanSize, creditScore, propertyType, occupancy, updateParams]);
 
     return (
         <div data-testid="search-control" data-cy="search-control" >
