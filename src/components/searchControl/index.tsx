@@ -37,10 +37,10 @@ export const SearchControl = () => {
                 occupancy));
                 e.preventDefault();
             }
-    }, [loanSize, creditScore, propertyType, occupancy]);
+    }, [loanSize, creditScore, propertyType, occupancy, updateParams]);
 
     return (
-        <div data-testid="search-control" >
+        <div data-testid="search-control" data-cy="search-control" >
             <form>
                 <div className="search">
                     <span>
@@ -48,6 +48,7 @@ export const SearchControl = () => {
                         <input
                             aria-labelledby="loan-size"
                             data-testid="loan-size"
+                            data-cy="loan-size"
                             type="number"
                             placeholder="450000"
                             onChange={e=>setLoanSize(parseInt(e.target.value))}
@@ -59,6 +60,7 @@ export const SearchControl = () => {
                         <select
                             aria-labelledby="property-type"
                             id="property-type"
+                            data-cy="property-type"
                             onChange={e=>setPropertyType(e.target.value)}
                             value={propertyType}
                         >
@@ -77,6 +79,7 @@ export const SearchControl = () => {
                         <input
                             aria-labelledby="credit-score"
                             data-testid="credit-score"
+                            data-cy="credit-score"
                             type="number"
                             placeholder="680"
                             onChange={e=>setCreditScore(parseInt(e.target.value))}
@@ -87,6 +90,7 @@ export const SearchControl = () => {
                         <label id="occupancy">Occupancy</label>
                         <select
                             aria-labelledby="occupancy"
+                            data-cy="occupancy"
                             value={occupancy}
                             onChange={e=>setOccupancy(e.target.value)}
                         >
@@ -98,7 +102,11 @@ export const SearchControl = () => {
                         </select>
                     </span>
                 </div>
-                <button className="quote-button" onClick={e=>updateParams(e)}>Quote Rates</button>
+                <button className="quote-button" 
+                        data-cy="quote-button"
+                        onClick={e=>updateParams(e)}>
+                            Quote Rates
+                </button>
             </form>
         </div>
     )

@@ -73,4 +73,4 @@ describe('todos reducer', () => {
             loading: true,
             error: "failed to fetch data"
             });        
-        })
+        });

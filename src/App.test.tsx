@@ -21,4 +21,4 @@ describe("when the user opens the browser", () => {
   });
 })
 
-//Add E2E test for when user clicks the button in the search control
+//Add E2E tests for user interaction and hece data fetching

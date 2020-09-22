@@ -27,13 +27,13 @@ export const QuoteTable:React.FC <IProps>=(props: IProps) => {
     });
 
     return (
-        <div data-testid="quote-table">
+        <div data-testid="quote-table" data-cy="quote-table">
             {loadingState ?
-            <div data-testid="loader" className="center-loader">
+            <div data-testid="loader" data-cy="loader" className="center-loader">
                 <h1> Press the button to see your rates!</h1>
                 <Loader  type="TailSpin" color="#265b5f"/>
             </div> :
-            <div data-testid="data-table">
+            <div data-testid="data-table" data-cy="data-table">
             <table>
                 <thead>
                     <tr>

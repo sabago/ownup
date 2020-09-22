@@ -11,9 +11,12 @@
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
     "@types/react-loader-spinner": "^3.1.0",
+    "@types/react-redux": "^7.1.9",
     "jest-css-modules-transform": "^4.0.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-loader-spinner": "^3.1.14",
+    "react-redux": "^7.2.1",
     "react-scripts": "3.4.3",
     "typescript": "~3.7.2"
   },
@@ -21,7 +24,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test:ci": "react-scripts test --ci --coverage --reporters=default --reporters=jest-junit",
+    "eject": "react-scripts eject",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run --browser chrome --headless",
+    "test:e2e": "start-server-and-test start 3000 cypress",
+    "test:e2e:ci": "start-server-and-test start 3000 cypress:headless"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -39,9 +47,16 @@
     ]
   },
   "devDependencies": {
+    "@testing-library/cypress": "^7.0.0",
+    "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",
+    "@types/testing-library__jest-dom": "^5.9.2",
+    "cypress": "^5.2.0",
+    "fetch-mock": "^9.10.7",
+    "msw": "^0.21.2",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "start-server-and-test": "^1.11.4"
   },
   "jest": {
     "collectCoverageFrom": [
@@ -65,8 +80,8 @@
       "[/\\\\]node_modules[/\\\\].+\\.(js|jsx|mjs)$"
     ],
     "moduleDirectories": [
-        "node_modules",
-        "src"
+      "node_modules",
+      "src"
     ],
     "moduleNameMapper": {
       "^react-native$": "react-native-web"
@@ -81,5 +96,4 @@
       "mjs"
     ]
   }
-
 }

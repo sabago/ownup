@@ -1,4 +1,4 @@
-
+import '@testing-library/jest-dom';
 import React from "react";
 import { SearchControl } from ".";
 import { testRender } from "../../testUtils";
@@ -41,8 +41,7 @@ describe ("when page laods", () => {
         const button = getByText('Quote Rates');
         expect(button).toBeInTheDocument();
 
-    })
-
-})
+    });
+});
 
 
