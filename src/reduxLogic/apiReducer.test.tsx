@@ -19,7 +19,7 @@ describe('todos reducer', () => {
         });
     });
   
-    it('should handle ADD_TODO', () => {
+    it('should handle main reducer', () => {
       expect(
         reduxThunkReducer(initialState, {
           type: types.LOAD_QUOTES_LOADING
