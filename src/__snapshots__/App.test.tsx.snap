@@ -6,6 +6,7 @@ exports[`when the user opens the browser renders App component in initial state 
     class="App"
   >
     <div
+      data-cy="search-control"
       data-testid="search-control"
     >
       <form>
@@ -20,6 +21,7 @@ exports[`when the user opens the browser renders App component in initial state 
             </label>
             <input
               aria-labelledby="loan-size"
+              data-cy="loan-size"
               data-testid="loan-size"
               placeholder="450000"
               type="number"
@@ -34,6 +36,7 @@ exports[`when the user opens the browser renders App component in initial state 
             </label>
             <select
               aria-labelledby="property-type"
+              data-cy="property-type"
               id="property-type"
             >
               <option
@@ -71,6 +74,7 @@ exports[`when the user opens the browser renders App component in initial state 
             </label>
             <input
               aria-labelledby="credit-score"
+              data-cy="credit-score"
               data-testid="credit-score"
               placeholder="680"
               type="number"
@@ -85,6 +89,7 @@ exports[`when the user opens the browser renders App component in initial state 
             </label>
             <select
               aria-labelledby="occupancy"
+              data-cy="occupancy"
             >
               <option
                 value="Primary"
@@ -106,16 +111,19 @@ exports[`when the user opens the browser renders App component in initial state 
         </div>
         <button
           class="quote-button"
+          data-cy="quote-button"
         >
           Quote Rates
         </button>
       </form>
     </div>
     <div
+      data-cy="quote-table"
       data-testid="quote-table"
     >
       <div
         class="center-loader"
+        data-cy="loader"
         data-testid="loader"
       >
         <h1>
